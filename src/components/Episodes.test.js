@@ -3,7 +3,8 @@ import { render } from "@testing-library/react";
 import Episodes from "./Episodes";
 
 test("successfully rerenders different seasons", () => {
-    const seasons = [[
+    const seasons = [
+      [
         {
             id: 553946,
             url: 'http://www.tvmaze.com/episodes/553946/stranger-things-1x01-chapter-one-the-vanishing-of-will-byers',
@@ -554,7 +555,7 @@ test("successfully rerenders different seasons", () => {
           }
         }
       ]
-    ]
+    ];
     const { rerender, getAllByTestId } = render(<Episodes episodes={seasons[0]} />);
     let episodes = getAllByTestId(/episode/i);
     expect(episodes).toHaveLength(8);
